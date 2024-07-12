@@ -11,12 +11,11 @@ import UIKit
 class home_page_ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
 
     @IBAction func logoutbtn(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "username")
-        UserDefaults.standard.removeObject(forKey: "password")
+       
         
-        let pull = UIStoryboard(name: "Main", bundle: nil)
-        let tops = pull.instantiateViewController(identifier: "log") as!loginViewController
-        self.navigationController?.pushViewController(tops, animated: true)
+        let pen = UIStoryboard(name: "Main", bundle: nil)
+        let bug = pen.instantiateViewController(identifier: "log") as!loginViewController
+        self.navigationController?.pushViewController(bug, animated: true)
         
     }
    

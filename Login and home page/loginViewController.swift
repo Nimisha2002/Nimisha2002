@@ -45,14 +45,25 @@ class loginViewController: UIViewController {
             
         }else{
             if(emailtxt.text==user && passtxt.text==pass){
-                let main = UIStoryboard(name: "Main", bundle: nil)
-                                      let story = main.instantiateViewController(identifier: "home1") as!home_page_ViewController
-                                      self.navigationController?.pushViewController(story, animated: true)
+                
+                let alert = UIAlertController(title: "Alert", message: "user not found", preferredStyle: UIAlertController.Style.alert)
+
+                alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
+    
                 
             }else{
-                let alert = UIAlertController(title: "Alert", message: "user not found", preferredStyle: UIAlertController.Style.alert)
-                           alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-                           self.present(alert, animated: true, completion: nil)
+                
+                UserDefaults.standard.setValue(emailtxt.text, forKey: "email")
+                UserDefaults.standard.setValue(passtxt.text, forKey: "password")
+                
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let story = main.instantiateViewController(identifier: "home1") as!home_page_ViewController
+                self.navigationController?.pushViewController(story, animated: true)
+                
+               
+            }
 
                            
             }
@@ -61,7 +72,7 @@ class loginViewController: UIViewController {
         }
         }
 
-        }
+        
     
 
     /*

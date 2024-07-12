@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordtext: UITextField!
     @IBOutlet weak var signupbtn: UIButton!
     
-   
     override func viewDidLoad() {
          
         signupbtn.layer.cornerRadius = 25
